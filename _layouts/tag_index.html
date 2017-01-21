@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% assign t = site.i18n[page.lang] %}
+{% assign tag = page.tag | downcase %}
+<div class="ui basic segment">  
+  <div class="ui center aligned container">
+    <div class="ui huge blue tag label">{{ t.tags[tag] }}</div>
+  </div>
+  <div class="ui divided items">
+    {% for post in site.tags[page.tag] %}
+      {% if post.lang == page.lang %}
+        <div class="item">
+          <div class="content">
+              <a href="{{ post.url | relative_url }}" class="header">{{ post.title | escape }}</a>
+            <div class="meta">
+              {{ post.date | date: "%b %-d, %Y" }}
+            </div>
+            <div class="description">
+              {{ post.excerpt }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

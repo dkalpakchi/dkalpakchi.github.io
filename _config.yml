@@ -13,22 +13,96 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@domain.com
+title: Apricis
+email: dkalpackchi@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  A personal blog of Dmytro Kalpakchi with posts on different topics and experiments with data.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+facebook_username: dmytro.kalpakchi
+github_username:  apricis
 
 # Build settings
 markdown: kramdown
-theme: minima
+highlighter: rouge
+theme: aprico
 gems:
   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
+collections:
+  tag:
+    output: true
+    permalink: /:path/
+  category:
+    output: true
+    permalink: /:path/
+
+
+permalink: pretty
+
+# direct translation
+default_lang: 'en'
+languages: ['en', 'uk']
+i18n:
+  en:
+    posts:
+      posted_at: posted at
+      in_category: in category
+      tagged_by: tagged by
+    menu:
+      posts: Posts
+      sandbox: Scientific sandbox
+      projects: Social projects
+      about: About me
+      lang: In English
+    categories:
+      thoughts: thoughts
+      en: In English
+    tags:
+      welcome: welcome
+      hello: hello
+    dates:
+      Jan: Jan
+      Feb: Feb
+      Mar: Mar
+      Apr: Apr
+      May: May
+      Jun: Jun
+      Jul: Jul
+      Aug: Aug
+      Sep: Sep
+      Oct: Oct
+      Nov: Nov
+      Dec: Dec
+  uk:
+    posts:
+      posted_at: опубліковано
+      in_category: у категорії
+      tagged_by: із позначками
+    menu:
+      posts: Дописи
+      sandbox: Наукова пісочниця
+      projects: Соціальні проекти
+      about: Про мене
+      lang: Українською
+    categories:
+      thoughts: роздуми
+      uk: Українською
+    tags:
+      welcome: вітання
+      hello: привіт
+    dates:
+      Jan: Січ
+      Feb: Лют
+      Mar: Бер
+      Apr: Кві
+      May: Тра
+      Jun: Чер
+      Jul: Лип
+      Aug: Серп
+      Sep: Вер
+      Oct: Жов
+      Nov: Лис
+      Dec: Гру

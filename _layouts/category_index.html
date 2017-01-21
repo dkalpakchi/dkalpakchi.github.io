@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{% assign t = site.i18n[page.lang] %}
+{% assign cat = page.category | downcase %}
+<div class="ui basic segment">  
+  <div class="ui huge center aligned header">{{ t.categories[cat] }}</div>
+  <div class="ui divided items">
+    {% for post in site.categories[cat] %}
+      {% if post.lang == page.lang %}
+        <div class="item">
+          <div class="content">
+              <a href="{{ post.url | relative_url }}" class="header">{{ post.title | escape }}</a>
+            <div class="meta">
+              {% assign b = post.date | date: "%b" %}
+              {{ t.dates[b] }} {{ post.date | date: " %-d, %Y" }}
+            </div>
+            <div class="description">
+              {{ post.excerpt }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

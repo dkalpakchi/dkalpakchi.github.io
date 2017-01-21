@@ -1,0 +1,54 @@
+{% assign t = site.i18n[page.lang].menu %}
+<div class="ui left fixed inverted violet straight vertical labeled large icon stackable menu">
+  {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+  <div class="ui violet fluid straight inverted simple buttons mobile hidden">
+    {% for pg in pages %}
+      <a href="{{ pg.url }}" class="ui button {{ pg.lang }} widescreen monitor only">{{ site.i18n[pg.lang].menu['lang'] }}</a>
+      <a href="{{ pg.url }}" class="ui button {{ pg.lang }} large monitor only">{{ site.i18n[pg.lang].menu['lang'] }}</a>
+      <a href="{{ pg.url }}" class="ui button {{ pg.lang }} computer only">{{ pg.lang }}</a>
+      <a href="{{ pg.url }}" class="ui button {{ pg.lang }} tablet only">{{ pg.lang }}</a>
+      <a href="{{ pg.url }}" class="ui button {{ pg.lang }} mobile only left floated">{{ pg.lang }}</a>
+    {% endfor %}
+    
+    {% for c in site.collections %}
+      {% assign category=site[c.label] | where:"ref", page.ref | sort: 'lang' %}
+      {% for el in category %}
+        <a href="{{ el.url }}" class="ui button {{ el.lang }} widescreen monitor only">{{ site.i18n[el.lang].menu['lang'] }}</a>
+        <a href="{{ el.url }}" class="ui button {{ el.lang }} large monitor only">{{ site.i18n[el.lang].menu['lang'] }}</a>
+        <a href="{{ el.url }}" class="ui button {{ el.lang }} computer only">{{ el.lang }}</a>
+        <a href="{{ el.url }}" class="ui button {{ el.lang }} tablet only">{{ el.lang }}</a>
+        <a href="{{ el.url }}" class="ui button {{ el.lang }} mobile only">{{ el.lang }}</a>
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <div class="ui violet fluid straight inverted simple buttons mobile only container">
+    {% for pg in pages %}
+      <a href="{{ pg.url }}" class="ui button {{ pg.lang }}">{{ pg.lang }}</a>
+    {% endfor %}
+    
+    {% for c in site.collections %}
+      {% assign category=site[c.label] | where:"ref", page.ref | sort: 'lang' %}
+      {% for el in category %}
+        <a href="{{ el.url }}" class="ui button {{ el.lang }}">{{ el.lang }}</a>
+      {% endfor %}
+    {% endfor %}
+  </div>  
+  <div class="ui basic logo centered segment mobile hidden">Apricis</div>
+  <div class="ui basic logo centered segment mobile only">A</div>
+
+  <a href="/{{page.lang}}/" class="item"><i class="newspaper icon"></i>{{t.posts}}</a>
+  <a class="item"><i class="lab icon"></i>{{t.sandbox}}</a>
+  <a class="item"><i class="wizard icon"></i>{{t.projects}}</a>
+  <a class="item"><i class="user icon"></i>{{t.about}}</a>
+
+  <div class="ui social left aligned mobile hidden container">
+    <div class="ui vertical large segment"><i class="github icon"></i><a href="https://github.com/apricis">{{site.github_username}}</a></div>
+    <div class="ui vertical large segment"><i class="facebook icon"></i><a href="https://www.facebook.com/dmytro.kalpakchi">{{site.facebook_username}}</a></div>
+  </div>
+
+  <div class="ui social mobile only violet icon fluid buttons">
+    <a href="https://github.com/apricis" class="ui huge icon button"><i class="github icon"></i></a>
+    <a href="https://www.facebook.com/dmytro.kalpakchi" class="ui huge icon button"><i class="facebook icon"></i></a>
+  </div>
+</div>
