@@ -1,0 +1,65 @@
+/*
+* @Author: Dmytro Kalpakchi
+* @Date:   2016-12-29 11:58:26
+* @Last Modified by:   Dmytro Kalpakchi
+* @Last Modified time: 2017-01-01 16:31:15
+*/
+
+.ui.straight.menu, .ui.straight.buttons .button {
+	border-radius: 0;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    .mobile.hidden,
+    .tablet.only,
+    .computer.only,
+    .large.monitor.only,
+    .widescreen.monitor.only {
+        display: none !important;
+    }
+}
+
+/* Tablet / iPad Portrait */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .mobile.only,
+    .tablet.hidden,
+    .computer.only,
+    .large.monitor.only,
+    .widescreen.monitor.only {
+        display: none !important;
+    }
+}
+
+/* Computer / Desktop / iPad Landscape */
+@media only screen and (min-width: 992px) and (max-width: 1399px) {
+    .mobile.only,
+    .tablet.only,
+    .computer.hidden,
+    .large.monitor.only,
+    .widescreen.monitor.only {
+        display: none !important;
+    }
+}
+
+/* Large Monitor */
+@media only screen and (min-width: 1400px) and (max-width: 1919px) {
+    .mobile.only,
+    .tablet.only,
+    .computer.only,
+    .large.monitor.hidden,
+    .widescreen.monitor.only {
+        display: none !important;
+    }
+}
+
+/* Widescreen Monitor */
+@media only screen and (min-width: 1920px) {
+    .mobile.only,
+    .tablet.only,
+    .computer.only,
+    .large.monitor.only,
+    .widescreen.monitor.hidden  {
+        display: none !important;
+    }
+}

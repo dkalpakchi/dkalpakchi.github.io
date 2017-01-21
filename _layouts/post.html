@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="ui {{page.color}} top attached segment">
+    {% assign t = site.i18n[page.lang] %}
+    {% if page.categories != empty and page.categories.size > 1 %}
+        {% assign cat = page.categories[1] %}
+        <a class="ui right ribbon {{page.color}} label" href="/{{page.lang}}/{{cat}}/">{{ t.categories[cat] }}</a>
+    {% endif %}
+    <div class="ui center aligned contents container">
+        <div id="postHeader" class="ui large post header">
+            {{ page.title | escape }}
+            <div class="ui sub header">
+                {% assign b = page.date | date: "%b" %}
+                {{ t.dates[b] }} {{ page.date | date: " %-d, %Y" }}
+            </div>
+        </div>
+        {% if page.tags != empty %}
+            <div class="tags">
+                {% for tag in page.tags %}
+                    <a class='ui blue label' href='/{{page.lang}}/tag/{{tag}}/'><i class='tag icon'></i>{{ t.tags[tag] }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+<div class="ui attached segment">
+    {{ content }}
+</div>

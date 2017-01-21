@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+  {% include head.html %}
+
+  <body>
+    <div class="ui padded grid">
+      <div class="three wide column">
+          {% include menu.html %}
+      </div>
+      <main class="thirteen wide column" aria-label="Content">
+        {{ content }}
+      </main>
+    </div>
+  </body>
+</html>

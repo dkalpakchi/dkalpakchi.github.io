@@ -1,0 +1,84 @@
+---
+---
+
+/*
+* @Author: Dmytro Kalpakchi
+* @Date:   2016-12-29 10:26:27
+* @Last Modified by:   Dmytro Kalpakchi
+* @Last Modified time: 2017-01-01 23:00:16
+*/
+@import "syntax";
+@import "semantic-fixes";
+
+html, body {
+    height: 100%;
+}
+
+.ui.grid {
+    height: 100%;
+}
+
+// manual correction of margin
+#postHeader.ui.post.header {
+	margin-top: 0.33rem !important;
+}
+
+.ui.left.fixed.menu {
+	width: inherit;
+}
+
+.ui.padded.grid > .column > *:last-child {
+	margin-bottom: 1rem !important;
+}
+
+.en:lang(en), .uk:lang(uk) {
+	background-color: #8A73FF !important;
+	color: #FFF !important;
+    // font-weight: bold;
+}
+
+.ui.inverted.simple.buttons .button {
+	-webkit-box-shadow: none !important;
+	        box-shadow: none !important;
+}
+
+@font-face {
+    font-family: IS;
+    src: url("/assets/fonts/Infinite_Stroke.otf");
+}
+
+.logo.segment {
+	color: white;
+	cursor: default;
+	font-family: IS;
+	font-size: 3rem !important;
+	padding: 1em 0 !important;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}
+
+.social {
+	bottom: 0;
+	color: white;
+	left: 0;
+	position: absolute;
+}
+
+.social .vertical.segment {
+	color: white;
+	padding: 1em;
+}
+
+.social a {
+	color: white;
+}
+
+.social a:hover {
+	text-decoration: underline;
+}
+
+// .ui.exp.menu .item {
+// 	font-size: 1.1em;
+// }
