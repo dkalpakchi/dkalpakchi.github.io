@@ -28,6 +28,7 @@ highlighter: rouge
 theme: minima
 gems:
   - jekyll-feed
+  - jemoji
 exclude:
   - Gemfile
   - Gemfile.lock

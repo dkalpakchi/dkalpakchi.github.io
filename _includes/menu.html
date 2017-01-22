@@ -34,13 +34,12 @@
       {% endfor %}
     {% endfor %}
   </div>  
-  <div class="ui basic logo centered segment mobile hidden">Apricis</div>
-  <div class="ui basic logo centered segment mobile only">A</div>
+  <a href='{% if page.lang == site.default_lang %}/{% else %}/{{page.lang}}/welcome/{% endif %}'><div class="ui basic logo centered segment mobile hidden">Apricis</div></a>
+  <a href='{% if page.lang == site.default_lang %}/{% else %}/{{page.lang}}/welcome/{% endif %}'><div class="ui basic logo centered segment mobile only">A</div></a>
 
   <a href="/{{page.lang}}/" class="item"><i class="newspaper icon"></i>{{t.posts}}</a>
   <a class="item"><i class="lab icon"></i>{{t.sandbox}}</a>
   <a class="item"><i class="wizard icon"></i>{{t.projects}}</a>
-  <a class="item"><i class="user icon"></i>{{t.about}}</a>
 
   <div class="ui social mobile hidden container">
     <div class="ui vertical large segment"><i class="github icon"></i><a href="https://github.com/apricis">{{site.github_username}}</a></div>

@@ -47,9 +47,24 @@ html, body {
     src: url("/assets/fonts/Infinite_Stroke.otf");
 }
 
+@font-face {
+    font-family: Miama;
+    src: url("/assets/fonts/miama.otf");
+}
+
+.signature {
+	font-family: Miama;
+	font-size: 1.5rem !important;
+}
+
+
+.email {
+	font-size: 1.2rem !important;
+}
+
 .logo.segment {
 	color: white;
-	cursor: default;
+	cursor: pointer;
 	font-family: IS;
 	font-size: 3rem !important;
 	padding: 1em 0 !important;
