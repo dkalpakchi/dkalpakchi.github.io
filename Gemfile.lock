@@ -40,6 +40,9 @@ GEM
     rouge (1.11.1)
     safe_yaml (1.0.4)
     sass (3.4.23)
+    turbolinks (5.0.1)
+      turbolinks-source (~> 5)
+    turbolinks-source (5.0.0)
 
 PLATFORMS
   ruby
@@ -48,6 +51,7 @@ DEPENDENCIES
   jekyll (= 3.3.0)
   jekyll-feed (~> 0.6)
   minima (~> 2.0)
+  turbolinks
 
 RUBY VERSION
    ruby 2.3.1p112
