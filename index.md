@@ -12,7 +12,7 @@ ref: index
 			<div class="content">
 				<p>Dear Reader,</p>
 				<br>
-				<p>I'd like to thank you for visiting my personal blog. I consider this blog to be a place where I can share my ideas and experiences with everyone. The "scientific sandbox" section contains small interesting experiments in the areas of machine learning and computer science made for the sake of curiosity. The "social projects" section covers the projects, mainly in the area of education, in which I was/am involved. All the other ideas and experiences are collected in the "posts" section.</p>
+				<p>I'd like to thank you for visiting my personal blog. I consider this blog to be a place where I can share my ideas and experiences with everyone. The "scientific sandbox" section contains small interesting experiments in the areas of machine learning and computer science made for the sake of curiosity. The "educational projects" section covers the projects in the area of education in which I was/am involved. All the other ideas and experiences are collected in the "posts" section.</p>
 				<br>
 				<p>As this blog is multilingual, with posts in English and Ukrainian, the translation of some posts might be delayed. Remember that each post may be improved with the help of your comments, so you're welcome to comment :smiley:! Please note that comments are provided by the <a href="https://disqus.com/">Disqus</a> service, so in order to comment you have one of <a href="https://disqus.com">Disqus</a>, <a href="https://twitter.com/">Twitter</a>, <a href="https://www.facebook.com/">Facebook</a> or <a href="https://www.google.com">Google</a> accounts. </p>
 				<br>
