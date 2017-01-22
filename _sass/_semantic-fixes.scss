@@ -10,7 +10,12 @@
 }
 
 .ui.basic.full.segment {
-    margin: 30% 0;
+    margin: 30% 0 !important;
+}
+
+.ui.contact.container {
+    position: relative;
+    width: 60%;
 }
 
 
