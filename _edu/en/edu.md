@@ -1,6 +1,6 @@
 ---
 layout: tbd
 lang: en
-ref: social
+ref: edu
 ---
 <div class="ui huge header">Page is under construction</div>

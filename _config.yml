@@ -22,6 +22,8 @@ url: "http://apricis.github.io" # the base hostname & protocol for your site, e.
 facebook_username: dmytro.kalpakchi
 github_username:  apricis
 
+excerpt_separator: <!--more-->
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
@@ -42,7 +44,7 @@ collections:
   sandbox:
     output: true
     permalink: /:path/
-  social:
+  edu:
     output: true
     permalink: /:path/
 
@@ -55,13 +57,13 @@ languages: ['en', 'uk']
 i18n:
   en:
     posts:
-      posted_at: posted at
+      posted_on: posted on
       in_category: in category
       tagged_by: tagged by
     menu:
       posts: Posts
       sandbox: Scientific sandbox
-      projects: Social projects
+      projects: Educational projects
       about: About me
       lang: In English
     categories:
@@ -85,13 +87,13 @@ i18n:
       Dec: Dec
   uk:
     posts:
-      posted_at: опубліковано
+      posted_on: опубліковано
       in_category: у категорії
       tagged_by: із позначками
     menu:
       posts: Дописи
       sandbox: Наукова пісочниця
-      projects: Соціальні проекти
+      projects: Освітні проекти
       about: Про мене
       lang: Українською
     categories:

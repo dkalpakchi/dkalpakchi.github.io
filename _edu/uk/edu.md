@@ -1,6 +1,6 @@
 ---
 layout: tbd
 lang: uk
-ref: social
+ref: edu
 ---
 <div class="ui huge header">Сторінка у розробці</div>

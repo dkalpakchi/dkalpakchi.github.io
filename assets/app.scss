@@ -18,6 +18,10 @@ html, body {
     height: 100%;
 }
 
+.post.segment {
+	text-align: justify;
+}
+
 // manual correction of margin
 #postHeader.ui.post.header {
 	margin-top: 0.33rem !important;

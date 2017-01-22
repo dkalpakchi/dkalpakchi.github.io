@@ -13,9 +13,20 @@
     margin: 30% 0 !important;
 }
 
-.ui.contact.container {
-    height: 60%;
-    position: relative;    
+.ui.small.video {
+    width: 25%;
+}
+
+.ui.medium.video {
+    width: 50%;
+}
+
+.ui.large.video {
+    width: 75%;
+}
+
+.ui.video {
+    margin: 0 auto;
 }
 
 
