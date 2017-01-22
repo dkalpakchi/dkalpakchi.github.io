@@ -18,7 +18,7 @@ email: dkalpackchi@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   A personal blog of Dmytro Kalpakchi with posts on different topics and experiments with data.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://apricis.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 facebook_username: dmytro.kalpakchi
 github_username:  apricis
 
