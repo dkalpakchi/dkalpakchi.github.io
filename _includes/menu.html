@@ -36,17 +36,26 @@
   </div>  
   <a href='{% if page.lang == site.default_lang %}/{% else %}/{{page.lang}}/welcome/{% endif %}'><div class="ui basic logo centered segment mobile hidden">Apricis</div></a>
   <a href='{% if page.lang == site.default_lang %}/{% else %}/{{page.lang}}/welcome/{% endif %}'><div class="ui basic logo centered segment mobile only">A</div></a>
+  
+  <div class="mobile hidden container">
+    <a href="/{{page.lang}}/" class="item"><i class="newspaper icon"></i>{{t.posts}}</a>
+    <a href="/{{page.lang}}/sandbox/" class="item"><i class="lab icon"></i>{{t.sandbox}}</a>
+    <a href="/{{page.lang}}/social/" class="item"><i class="student icon"></i>{{t.projects}}</a>
+  </div>
 
-  <a href="/{{page.lang}}/" class="item"><i class="newspaper icon"></i>{{t.posts}}</a>
-  <a class="item"><i class="lab icon"></i>{{t.sandbox}}</a>
-  <a class="item"><i class="wizard icon"></i>{{t.projects}}</a>
+  <div class="mobile only container">
+    <a href="/{{page.lang}}/" class="item"><i class="newspaper icon"></i></a>
+    <a href="/{{page.lang}}/sandbox/" class="item"><i class="lab icon"></i></a>
+    <a href="/{{page.lang}}/social/" class="item"><i class="student icon"></i></a>
+  </div>
 
   <div class="ui social mobile hidden container">
     <div class="ui vertical large segment"><i class="github icon"></i><a href="https://github.com/apricis">{{site.github_username}}</a></div>
     <div class="ui vertical large segment"><i class="facebook icon"></i><a href="https://www.facebook.com/dmytro.kalpakchi">{{site.facebook_username}}</a></div>
+    <div class="ui vertical large segment"><i class="at icon"></i><a href="mailto:dkalpackchi@gmail.com">{{site.email}}</a></div>
   </div>
 
-  <div class="ui social mobile only violet icon fluid buttons">
+  <div class="ui social mobile only violet icon fluid buttons container">
     <a href="https://github.com/apricis" class="ui huge icon button"><i class="github icon"></i></a>
     <a href="https://www.facebook.com/dmytro.kalpakchi" class="ui huge icon button"><i class="facebook icon"></i></a>
   </div>
