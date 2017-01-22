@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 lang: uk
 title:  "First post"
 categories: uk
