@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="ui {{page.color}} top attached segment" {% if page.cover %}style="background: url(/assets/{{page.cover}}/) 0px/cover; height: 300px;{% endif %}">
+<div class="ui {{page.color}} top attached segment" {% if page.cover %}style="background: url(/assets/{{page.cover}}) 0px/cover; height: 300px;{% endif %}">
     {% assign t = site.i18n[page.lang] %}
     {% if page.categories != empty and page.categories.size > 1 %}
         {% assign cat = page.categories[1] %}
