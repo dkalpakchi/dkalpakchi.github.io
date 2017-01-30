@@ -49,7 +49,7 @@ collections:
     permalink: /:path/
 
 
-permalink: pretty
+permalink: /:year/:month/:day/:title/
 
 # direct translation
 default_lang: 'en'
@@ -69,9 +69,14 @@ i18n:
     categories:
       thoughts: thoughts
       en: In English
+      education: education
     tags:
       welcome: welcome
       hello: hello
+      education: education
+      ukraine: Ukraine
+      sweden: Sweden
+      heducation: higher education
     dates:
       Jan: Jan
       Feb: Feb
@@ -99,9 +104,14 @@ i18n:
     categories:
       thoughts: роздуми
       uk: Українською
+      education: освіта
     tags:
       welcome: вітання
       hello: привіт
+      education: освіта
+      heducation: вища освіта
+      ukraine: Україна
+      sweden: Швеція
     dates:
       Jan: Січ
       Feb: Лют

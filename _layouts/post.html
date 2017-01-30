@@ -2,16 +2,16 @@
 layout: default
 ---
 
-<div class="ui {{page.color}} top attached segment">
+<div class="ui {{page.color}} top attached segment" {% if page.cover %}style="background: url(/assets/{{page.cover}}/) 0px/cover; height: 300px;{% endif %}">
     {% assign t = site.i18n[page.lang] %}
     {% if page.categories != empty and page.categories.size > 1 %}
         {% assign cat = page.categories[1] %}
         <a class="ui right ribbon {{page.color}} label" href="/{{page.lang}}/{{cat}}/">{{ t.categories[cat] }}</a>
     {% endif %}
-    <div class="ui center aligned contents container">
-        <div id="postHeader" class="ui large post header">
+    <div class="ui center aligned contents {% if page.cover %} covered {% endif %} title container">
+        <div id="postHeader" class="ui large post header" {% if page.title_color %} style="color:{{page.title_color}};" {% endif %}>
             {{ page.title | escape }}
-            <div class="ui sub header">
+            <div class="ui sub header" {% if page.title_color %} style="color:{{page.title_color}};" {% endif %}>
                 {% assign b = page.date | date: "%b" %}
                 {{ t.dates[b] }} {{ page.date | date: " %-d, %Y" }}
             </div>
