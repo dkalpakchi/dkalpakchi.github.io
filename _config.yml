@@ -48,9 +48,6 @@ collections:
     output: true
     permalink: /:path/
 
-
-permalink: /:year/:month/:day/:title/
-
 # direct translation
 default_lang: 'en'
 languages: ['en', 'uk']
