@@ -2,56 +2,58 @@
 layout: default
 ---
 
-<div class="ui {{page.color}} top attached segment" {% if page.cover %}style="background: url(/assets/{{page.cover}}) 0px/cover; height: 300px;{% endif %}">
-    {% assign t = site.i18n[page.lang] %}
-    {% if page.categories != empty and page.categories.size > 1 %}
-        {% assign cat = page.categories[1] %}
-        <a class="ui right ribbon {{page.color}} label" href="/{{page.lang}}/{{cat}}/">{{ t.categories[cat] }}</a>
-    {% endif %}
-    <div class="ui center aligned contents {% if page.cover %} covered {% endif %} title container">
-        <div id="postHeader" class="ui large post header" {% if page.title_color %} style="color:{{page.title_color}};" {% endif %}>
-            {{ page.title | escape }}
-            <div class="ui sub header" {% if page.title_color %} style="color:{{page.title_color}};" {% endif %}>
-                {% assign b = page.date | date: "%b" %}
-                {{ t.dates[b] }} {{ page.date | date: " %-d, %Y" }}
-            </div>
-        </div>
-        {% if page.tags != empty %}
-            <div class="tags">
-                {% for tag in page.tags %}
-                    <a class='ui blue label' href='/{{page.lang}}/tag/{{tag}}/'><i class='tag icon'></i>{{ t.tags[tag] }}</a>
-                {% endfor %}
-            </div>
+<div class="ui container">
+    <div class="ui {{page.color}} top attached segment" {% if page.cover %}style="background: url(/assets/{{page.cover}}) 0px/cover; height: 300px;{% endif %}">
+        {% assign t = site.i18n[page.lang] %}
+        {% if page.categories != empty and page.categories.size > 1 %}
+            {% assign cat = page.categories[1] %}
+            <a class="ui right ribbon {{page.color}} label" href="/{{page.lang}}/{{cat}}/">{{ t.categories[cat] }}</a>
         {% endif %}
+        <div class="ui center aligned contents {% if page.cover %} covered {% endif %} title container">
+            <div id="postHeader" class="ui large post header" {% if page.title_color %} style="color:{{page.title_color}};" {% endif %}>
+                {{ page.title | escape }}
+                <div class="ui sub header" {% if page.title_color %} style="color:{{page.title_color}};" {% endif %}>
+                    {% assign b = page.date | date: "%b" %}
+                    {{ t.dates[b] }} {{ page.date | date: " %-d, %Y" }}
+                </div>
+            </div>
+            {% if page.tags != empty %}
+                <div class="tags">
+                    {% for tag in page.tags %}
+                        <a class='ui blue label' href='/{{page.lang}}/tag/{{tag}}/'><i class='tag icon'></i>{{ t.tags[tag] }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
     </div>
-</div>
-<div class="ui attached post segment">
-    {{ content }}
-</div>
-{% if page.comments %}
-    <div id="disqus_thread"></div>
-    <script>
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        
-        var disqus_config = function () {
-            this.page.url = "{{ site.url }}{{ page.url }}";  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = "{{ page.lang }}_{{ page.ref }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            this.page.title = "{{ page.title }}";
-            this.language = "{{ page.lang }}";
-        };
-        
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = '//apricis-github-io.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{% endif %}
+    <div class="ui attached post segment">
+        {{ content }}
+    </div>
+    {% if page.comments %}
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            
+            var disqus_config = function () {
+                this.page.url = "{{ site.url }}{{ page.url }}";  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "{{ page.lang }}_{{ page.ref }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.page.title = "{{ page.title }}";
+                this.language = "{{ page.lang }}";
+            };
+            
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = '//apricis-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    {% endif %}
 
-{% for js in page.custom_js %}
-    <script type="text/javascript" src="{{js}}"></script>
-{% endfor %}
+    {% for js in page.custom_js %}
+        <script type="text/javascript" src="{{js}}"></script>
+    {% endfor %}
+</div>

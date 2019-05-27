@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-
   {% include head.html %}
-
   <body>
-    <div class="ui padded doubling grid">
-      <div class="three wide column">
-          {% include menu.html %}
+    <a href="{% if page.lang == site.default_lang %}/{% else %}/{{page.lang}}/{% endif %}">
+      <div class="ui logo container">
+        <img src="/assets/img/logo.png" alt="My blog's logo" class="ui tiny centered image">
       </div>
-      <main class="thirteen wide column" aria-label="Content">
-        {{ content }}
-      </main>
-    </div>
+    </a>
+    {% include menu.html %}
+    <main aria-label="Content">
+      {{ content }}
+    </main>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -22,5 +21,6 @@
       ga('send', 'pageview');
 
     </script>
+    {% include footer.html %}
   </body>
 </html>

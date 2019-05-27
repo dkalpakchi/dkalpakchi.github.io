@@ -13,14 +13,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Apricis
+title: Dmytro's blog
 email: dkalpackchi
 description: > # this means to ignore newlines until "baseurl:"
   A personal blog of Dmytro Kalpakchi with posts on different topics and experiments with data.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://apricis.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://dkalpakchi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 facebook_username: dmytro.kalpakchi
-github_username:  apricis
+github_username:  dkalpakchi
 
 excerpt_separator: <!--more-->
 
@@ -31,6 +31,7 @@ theme: minima
 gems:
   - jekyll-feed
   - jemoji
+  - jekyll-redirect-from
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -63,6 +64,8 @@ i18n:
       projects: Educational projects
       about: About me
       lang: In English
+      language: Language
+      title: Dmytro Kalpakchi blog
     categories:
       thoughts: thoughts
       en: In English
@@ -98,6 +101,8 @@ i18n:
       projects: Освітні проекти
       about: Про мене
       lang: Українською
+      language: Мова
+      title: Блог Дмитра Калпакчі
     categories:
       thoughts: роздуми
       uk: Українською

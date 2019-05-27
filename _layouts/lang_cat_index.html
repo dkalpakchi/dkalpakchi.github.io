@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign t = site.i18n[page.lang] %}
 {% assign cat = page.category | downcase %}
-<div class="ui basic segment">  
+<div class="ui basic segment container">  
   <div class="ui divided items">
     {% for post in site.categories[cat] %}
       {% if post.lang == page.lang %}

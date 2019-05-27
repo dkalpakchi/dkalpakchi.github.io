@@ -10,99 +10,67 @@
 @import "syntax";
 @import "semantic-fixes";
 
-html, body {
-    height: 100%;
+body {
+  background-color: #FFFFFF;
 }
 
-.ui.grid {
-    height: 100%;
+.logo.container {
+	margin-top: 1em;
 }
 
-.post.segment {
-	text-align: justify;
+.main.container {
+  margin-top: 2em;
 }
 
-// manual correction of margin
-#postHeader.ui.post.header {
-	margin-top: 0.33rem !important;
+.main.menu {
+  margin-top: 2em;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  transition:
+    box-shadow 0.5s ease,
+    padding 0.5s ease
+  ;
 }
 
-.ui.left.fixed.menu {
-	width: inherit;
+.overlay {
+  float: left;
+  margin: 0em 3em 1em 0em;
 }
 
-.ui.padded.grid > .column > *:last-child {
-	margin-bottom: 1rem !important;
+.overlay .menu {
+  position: relative;
+  left: 0;
+  transition: left 0.5s ease;
 }
 
-.en:lang(en), .uk:lang(uk) {
-	background-color: #8A73FF !important;
-	color: #FFF !important;
-    // font-weight: bold;
+.main.menu.fixed {
+  background-color: #FFFFFF;
+  border: 1px solid #DDD;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-.ui.inverted.simple.buttons .button {
-	-webkit-box-shadow: none !important;
-	        box-shadow: none !important;
+.overlay.fixed .menu {
+  left: 800px;
 }
 
-@font-face {
-    font-family: IS;
-    src: url("/assets/fonts/Infinite_Stroke.otf");
+.text.container .left.floated.image {
+  margin: 2em 2em 2em -4em;
 }
 
-@font-face {
-    font-family: Miama;
-    src: url("/assets/fonts/miama.otf");
+.text.container .right.floated.image {
+  margin: 2em -4em 2em 2em;
 }
 
-.signature {
-	font-family: Miama;
-	font-size: 1.5rem !important;
+.ui.footer.segment {
+  margin: 5em 0em 0em;
+  padding: 5em 0em;
 }
 
-
-.email {
-	font-size: 1.2rem !important;
+.ui.compact.list .item .content {
+	width: inherit !important;
 }
 
-.logo.segment {
-	color: white;
-	cursor: pointer;
-	font-family: IS;
-	font-size: 3rem !important;
-	padding: 1em 0 !important;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
+.ui.compact.list .item {
+	
 }
-
-.social {
-	bottom: 0;
-	color: white;
-	left: 0;
-	position: absolute;
-}
-
-.social .vertical.segment {
-	color: white;
-	padding: 1em;
-}
-
-.social a {
-	color: white;
-}
-
-.social a:hover {
-	text-decoration: underline;
-}
-
-.covered.title.container {
-	position: relative;
-	top: 25%;
-}
-
-// .ui.exp.menu .item {
-// 	font-size: 1.1em;
-// }

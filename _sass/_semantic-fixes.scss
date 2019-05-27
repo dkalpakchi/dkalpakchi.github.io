@@ -84,3 +84,9 @@
         display: none !important;
     }
 }
+
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+}

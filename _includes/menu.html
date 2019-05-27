@@ -1,63 +1,36 @@
 {% assign t = site.i18n[page.lang].menu %}
-<div class="ui left fixed inverted violet straight vertical labeled large icon stackable menu">
+
+<div class="ui borderless main labeled menu">
   {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-  <div class="ui violet fluid straight inverted simple buttons mobile hidden">
-    {% for pg in pages %}
-      <a href="{{ pg.url }}" class="ui button {{ pg.lang }} widescreen monitor only">{{ site.i18n[pg.lang].menu['lang'] }}</a>
-      <a href="{{ pg.url }}" class="ui button {{ pg.lang }} large monitor only">{{ site.i18n[pg.lang].menu['lang'] }}</a>
-      <a href="{{ pg.url }}" class="ui button {{ pg.lang }} computer only">{{ pg.lang }}</a>
-      <a href="{{ pg.url }}" class="ui button {{ pg.lang }} tablet only">{{ pg.lang }}</a>
-      <a href="{{ pg.url }}" class="ui button {{ pg.lang }} mobile only left floated">{{ pg.lang }}</a>
-    {% endfor %}
-    
-    {% for c in site.collections %}
-      {% assign category=site[c.label] | where:"ref", page.ref | sort: 'lang' %}
-      {% for el in category %}
-        <a href="{{ el.url }}" class="ui button {{ el.lang }} widescreen monitor only">{{ site.i18n[el.lang].menu['lang'] }}</a>
-        <a href="{{ el.url }}" class="ui button {{ el.lang }} large monitor only">{{ site.i18n[el.lang].menu['lang'] }}</a>
-        <a href="{{ el.url }}" class="ui button {{ el.lang }} computer only">{{ el.lang }}</a>
-        <a href="{{ el.url }}" class="ui button {{ el.lang }} tablet only">{{ el.lang }}</a>
-        <a href="{{ el.url }}" class="ui button {{ el.lang }} mobile only">{{ el.lang }}</a>
-      {% endfor %}
-    {% endfor %}
-  </div>
-
-  <div class="ui violet fluid straight inverted simple buttons mobile only container">
-    {% for pg in pages %}
-      <a href="{{ pg.url }}" class="ui button {{ pg.lang }}">{{ pg.lang }}</a>
-    {% endfor %}
-    
-    {% for c in site.collections %}
-      {% assign category=site[c.label] | where:"ref", page.ref | sort: 'lang' %}
-      {% for el in category %}
-        <a href="{{ el.url }}" class="ui button {{ el.lang }}">{{ el.lang }}</a>
-      {% endfor %}
-    {% endfor %}
-  </div>  
-  <a href='{% if page.lang == site.default_lang %}/{% else %}/{{page.lang}}/welcome/{% endif %}'><div class="ui basic logo centered segment mobile hidden">Apricis</div></a>
-  <a href='{% if page.lang == site.default_lang %}/{% else %}/{{page.lang}}/welcome/{% endif %}'><div class="ui basic logo centered segment mobile only">A</div></a>
-  
-  <div class="ui mobile hidden container">
+  <div class="ui text container">
+    <div class="header item tablet mobile hidden">
+      <img id="smallLogo" src="/assets/img/logo.png" alt="My blog's logo" class="ui mini hidden logo image">
+      <a href='{% if page.lang == site.default_lang %}/{% else %}/{{page.lang}}/{% endif %}'>{{t.title}}</a>
+    </div>
     <a href="/{{page.lang}}/" class="item"><i class="newspaper icon"></i>{{t.posts}}</a>
-    <a href="/{{page.lang}}/sandbox/" class="item"><i class="lab icon"></i>{{t.sandbox}}</a>
-    <a href="/{{page.lang}}/edu/" class="item"><i class="student icon"></i>{{t.projects}}</a>
-  </div>
-
-  <div class="ui mobile only container">
-    <a href="/{{page.lang}}/" class="item"><i class="newspaper icon"></i></a>
-    <a href="/{{page.lang}}/sandbox/" class="item"><i class="lab icon"></i></a>
-    <a href="/{{page.lang}}/edu/" class="item"><i class="student icon"></i></a>
-  </div>
-
-  <div class="ui social mobile hidden container">
-    <div class="ui vertical large segment"><i class="github icon"></i><a href="https://github.com/apricis">{{site.github_username}}</a></div>
-    <div class="ui vertical large segment"><i class="facebook icon"></i><a href="https://www.facebook.com/dmytro.kalpakchi">{{site.facebook_username}}</a></div>
-    <div class="ui vertical large segment"><i class="at icon"></i><a href="mailto:dkalpackchi@gmail.com">{{site.email}}</a></div>
-  </div>
-
-  <div class="ui social mobile only violet icon fluid buttons container">
-    <a href="https://github.com/apricis" class="ui huge icon button"><i class="github icon"></i></a>
-    <a href="https://www.facebook.com/dmytro.kalpakchi" class="ui huge icon button"><i class="facebook icon"></i></a>
-    <a href="mailto:dkalpackchi@gmail.com" class="ui huge icon button"  ><i class="at icon"></i></a>
+    <a href="/{{page.lang}}/about/" class="item">{{t.about}}</a>
+    <div class="ui right floated dropdown item">
+      <i class="globe icon"></i>{{t.language}} <i class="dropdown icon"></i>
+      <div class="menu">
+        {% for pg in pages %}
+          <a href="{{ pg.url }}" class="item {{ pg.lang }} widescreen monitor only">{{ site.i18n[pg.lang].menu['lang'] }}</a>
+          <a href="{{ pg.url }}" class="item {{ pg.lang }} large monitor only">{{ site.i18n[pg.lang].menu['lang'] }}</a>
+          <a href="{{ pg.url }}" class="item {{ pg.lang }} computer only">{{ pg.lang }}</a>
+          <a href="{{ pg.url }}" class="item {{ pg.lang }} tablet only">{{ pg.lang }}</a>
+          <a href="{{ pg.url }}" class="item {{ pg.lang }} mobile only">{{ pg.lang }}</a>
+        {% endfor %}
+        
+        {% for c in site.collections %}
+          {% assign category=site[c.label] | where:"ref", page.ref | sort: 'lang' %}
+          {% for el in category %}
+            <a href="{{ el.url }}" class="item {{ el.lang }} widescreen monitor only">{{ site.i18n[el.lang].menu['lang'] }}</a>
+            <a href="{{ el.url }}" class="item {{ el.lang }} large monitor only">{{ site.i18n[el.lang].menu['lang'] }}</a>
+            <a href="{{ el.url }}" class="item {{ el.lang }} computer only">{{ el.lang }}</a>
+            <a href="{{ el.url }}" class="item {{ el.lang }} tablet only">{{ el.lang }}</a>
+            <a href="{{ el.url }}" class="item {{ el.lang }} mobile only">{{ el.lang }}</a>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </div>
