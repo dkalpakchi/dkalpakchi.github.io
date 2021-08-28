@@ -1,0 +1,30 @@
+<!--
+  The Search results
+-->
+
+{% if site.languages contains page.title %}
+  {% assign LANG = page.title %}
+{% else %}
+  {% assign LANG = page.lang|default: "en" %}
+{% endif %}
+{% assign t = site.i18n[LANG] %}
+
+<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
+  <div class="col-12 col-sm-11 post-content">
+    <div id="search-hints">
+      <h4 class="text-muted mb-4">{{ t.panel.trending_tags }}</h4>
+
+      {% include trending-tags.html %}
+
+      {% for tag_str in trending_tags %}
+        {% assign tag = tag_str | split: "::" %}
+        {% assign tag_name_en = tag | first %}
+        {% assign tag_name = tag | last %}
+        {% capture url %}/tags/{{ tag_name_en | slugify | url_encode }}/{% endcapture %}
+        <a class="post-tag" href="{{ url | relative_url }}">{{ tag_name | replace: '-', ' ' }}</a>
+      {% endfor %}
+
+    </div>
+    <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
+  </div>
+</div>
