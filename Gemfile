@@ -3,7 +3,7 @@ ruby RUBY_VERSION
 
 gem "jekyll"
 
-gem "jekyll-theme-chirpy", "4.0"
+gem "jekyll-theme-chirpy", "4.0.2"
 
 gem "jemoji"
 
