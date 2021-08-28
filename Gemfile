@@ -13,7 +13,6 @@ gem "nokogiri", ">= 1.11.4"
 
 gem "addressable", ">= 2.8.0"
 
-
 # If you have any plugins, put them here!
 group :jekyll_plugins do
    gem "jekyll-feed"
