@@ -1,59 +1,130 @@
 ---
 layout: default
+# The posts' layout
 ---
 
-<div class="ui container">
-    <div class="ui {{page.color}} top attached segment" {% if page.cover %}style="background: url(/assets/{{page.cover}}) 0px/cover; height: 300px;{% endif %}">
-        {% assign t = site.i18n[page.lang] %}
-        {% if page.categories != empty and page.categories.size > 1 %}
-            {% assign cat = page.categories[1] %}
-            <a class="ui right ribbon {{page.color}} label" href="/{{page.lang}}/{{cat}}/">{{ t.categories[cat] }}</a>
-        {% endif %}
-        <div class="ui center aligned contents {% if page.cover %} covered {% endif %} title container">
-            <div id="postHeader" class="ui large post header" {% if page.title_color %} style="color:{{page.title_color}};" {% endif %}>
-                {{ page.title | escape }}
-                <div class="ui sub header" {% if page.title_color %} style="color:{{page.title_color}};" {% endif %}>
-                    {% assign b = page.date | date: "%b" %}
-                    {{ t.dates[b] }} {{ page.date | date: " %-d, %Y" }}
-                </div>
-            </div>
-            {% if page.tags != empty %}
-                <div class="tags">
-                    {% for tag in page.tags %}
-                        <a class='ui blue label' href='/{{page.lang}}/tag/{{tag}}/'><i class='tag icon'></i>{{ t.tags[tag] }}</a>
-                    {% endfor %}
-                </div>
-            {% endif %}
+{% assign t = site.i18n[page.lang] %}
+
+<div class="row">
+
+  <div id="post-wrapper" class="col-12 col-lg-11 col-xl-8">
+
+    <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+
+      <h1 data-toc-skip>{{ page.title }}</h1>
+
+      <div class="post-meta text-muted d-flex flex-column">
+        <!-- Published date and author -->
+        <div>
+          <span class="semi-bold">
+            {{ page.author | default: site.social.name }}
+          </span>
+          
+          {% include timeago.html date=page.date prep=t.util.on tooltip=true t=t%}
         </div>
-    </div>
-    <div class="ui attached post segment">
+
+        <div>
+          <!-- lastmod -->
+          {% if page.last_modified_at %}
+          <span>
+            {% include timeago.html date=page.date
+              class="lastmod" prefix=t.util.updated tooltip=true t=t%}
+          </span>
+          {% endif %}
+
+          <!-- read time -->
+          {% include read-time.html content=content %}
+
+          <!-- page views -->
+          {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
+          <span id="pv" class="pageviews"><i class="fas fa-spinner fa-spin fa-fw"></i></span>
+          {% endif %}
+
+        </div>
+
+      </div> <!-- .post-meta -->
+
+      <div class="post-content">
+
+        {% if page.image.src %}
+          <img src="{{ page.image.src }}" class="preview-img" alt="{{ page.image.alt | default: "Preview Image" }}">
+        {% endif %}
+
         {{ content }}
-    </div>
-    {% if page.comments %}
-        <div id="disqus_thread"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-            
-            var disqus_config = function () {
-                this.page.url = "{{ site.url }}{{ page.url }}";  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = "{{ page.lang }}_{{ page.ref }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                this.page.title = "{{ page.title }}";
-                this.language = "{{ page.lang }}";
-            };
-            
-            (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = '//apricis-github-io.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+
+      <div class="post-tail-wrapper text-muted">
+
+        <!-- categories -->
+        {% if page.categories.size > 0 %}
+        <div class="post-meta mb-3">
+          <i class="far fa-folder-open fa-fw mr-1"></i>
+          {% for category in page.categories %}
+            <a href='{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/'>{{ t.categories[category] }}</a>
+            {%- unless forloop.last -%}, {%- endunless -%}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- tags -->
+        {% if page.tags.size > 0 %}
+        <div class="post-tags">
+          <i class="fa fa-tags fa-fw mr-1"></i>
+          {% for tag in page.tags %}
+          <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
+            class="post-tag no-text-decoration" >
+            {{- t.tags[tag] -}}
+          </a>
+          {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="post-tail-bottom
+          d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+          {% if site.data.rights.license %}
+          <div class="license-wrapper">
+            This post is licensed under
+            <a href="{{ site.data.rights.license.link }}">{{ site.data.rights.license.name }}</a>
+            by the author.
+          </div>
+          {% endif %}
+
+          {% include post-sharing.html lang=page.lang %}
+
+        </div><!-- .post-tail-bottom -->
+
+      </div><!-- div.post-tail -->
+
+    </div> <!-- .post -->
+
+
+  </div> <!-- #post-wrapper -->
+
+  {% assign enable_toc = false %}
+
+  {% if site.toc and page.toc %}
+    {% if content contains '<h2' or content contains '<h3' %}
+      {% assign enable_toc = true %}
+    {% endif %}
+  {% endif %}
+
+  {% include panel.html toc=enable_toc %}
+
+</div> <!-- .row -->
+
+<div class="row">
+  <div class="col-12 col-lg-11 col-xl-8">
+    <div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+
+    {% include related-posts.html lang=page.lang %}
+
+    {% if site.disqus.comments and page.comments %}
+      {% include disqus.html %}
     {% endif %}
 
-    {% for js in page.custom_js %}
-        <script type="text/javascript" src="{{js}}"></script>
-    {% endfor %}
-</div>
+    </div> <!-- #post-extend-wrapper -->
+
+  </div> <!-- .col-* -->
+
+</div> <!-- .row -->

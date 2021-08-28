@@ -1,25 +1,8 @@
 ---
-layout: default
+layout: page
+# The Home page layout
 ---
 
-<div class="ui basic segment container">
-  
-  {{ content }}
-
-  <div class="ui divided items">
-    {% assign posts=site.posts | where:"lang", page.lang %}
-    {% for post in posts %}
-      <div class="item">
-      	<div class="content">
-      		<a href="{{ post.url | relative_url }}" class="header">{{ post.title | escape }}</a>
-          <div class="meta">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </div>
-          <div class="description">
-            {{ post.excerpt }}
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
+<div class='mt-5'>
+  I am a third year PhD student at the Division of Speech, Music and Hearing, KTH Royal Institute of Technology.
 </div>

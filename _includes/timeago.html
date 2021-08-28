@@ -1,0 +1,22 @@
+<!--
+  Date format snippet
+  See: /assets/js/_utils/timeage.js
+-->
+
+{% assign tooltip_df = site.data.date_format.tooltip | default: '%a, %b %e, %Y, %l:%M %p %z' %}
+{% assign month = include.date | date: "%b" %}
+{% assign rest = include.date | date: " %-d, %Y" %}
+{% assign dt = include.t.dates[month] | append: rest %}
+
+<span class="timeago {% if include.class %}{{ include.class }}{% endif %}"
+  {% if include.tooltip %}
+    data-toggle="tooltip"
+    data-placement="bottom"
+    title="{{ include.date | date: tooltip_df }}"
+  {% endif %}
+
+  {% if include.prefix %}prefix="{{ include.prefix }} "{% endif%}
+  {% if include.prep %}prep="{{ include.prep }}"{% endif %} >
+
+  {{ dt }}
+</span>

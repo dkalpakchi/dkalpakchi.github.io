@@ -13,21 +13,31 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Dmytro's blog
+title: Dmytro Kalpakchi
+tagline: Occasionally interesting thoughts
 email: dkalpackchi
 description: > # this means to ignore newlines until "baseurl:"
-  A personal blog of Dmytro Kalpakchi with posts on different topics and experiments with data.
+  A personal website of Dmytro Kalpakchi with occasionally interesting thoughts.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://dkalpakchi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-facebook_username: dmytro.kalpakchi
-github_username:  dkalpakchi
+# url: "http://dkalpakchi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+github:
+  username: dkalpakchi
+
+social:
+  name: Dmytro Kalpakchi
+  email: dmytroka@kth.se
+
+permalink: /:title/
 
 excerpt_separator: <!--more-->
+
+avatar: /assets/img/logo.png
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+theme: jekyll-theme-chirpy
 gems:
   - jekyll-feed
   - jemoji
@@ -35,29 +45,35 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
 collections:
-  tag:
+  tabs:
     output: true
-    permalink: /:path/
-  category:
-    output: true
-    permalink: /:path/
-  sandbox:
-    output: true
-    permalink: /:path/
-  edu:
-    output: true
-    permalink: /:path/
+    sort_by: order
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
 
 # direct translation
 default_lang: 'en'
 languages: ['en', 'uk']
 i18n:
   en:
+    panel:
+      trending_tags: Trending Tags
+      lastmod: Recent Update
     posts:
       posted_on: posted on
       in_category: in category
       tagged_by: tagged by
+      further_reading: Further Reading
+      share: Share
     menu:
       posts: Posts
       sandbox: Scientific sandbox
@@ -76,7 +92,7 @@ i18n:
       education: education
       ukraine: Ukraine
       sweden: Sweden
-      heducation: higher education
+      higher-education: higher education
     dates:
       Jan: Jan
       Feb: Feb
@@ -90,11 +106,20 @@ i18n:
       Oct: Oct
       Nov: Nov
       Dec: Dec
+    util:
+      on: on
+      updated: Updated
+      copy_link: Copy link
   uk:
+    panel:
+      trending_tags: Популярні теги
+      lastmod: Останні оновлення
     posts:
       posted_on: опубліковано
       in_category: у категорії
       tagged_by: із позначками
+      further_reading: Може бути цікаво
+      share: Поділитися
     menu:
       posts: Дописи
       sandbox: Наукова пісочниця
@@ -111,7 +136,7 @@ i18n:
       welcome: вітання
       hello: привіт
       education: освіта
-      heducation: вища освіта
+      higher-education: вища освіта
       ukraine: Україна
       sweden: Швеція
     dates:
@@ -127,3 +152,7 @@ i18n:
       Oct: Жов
       Nov: Лис
       Dec: Гру
+    util:
+      on: на
+      updated: Оновлено
+      copy_link: Скопіювати посилання

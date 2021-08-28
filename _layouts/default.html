@@ -1,26 +1,48 @@
+---
+layout: compress
+# Default layout
+---
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+{% capture prefer_mode %}
+  {% if site.theme_mode %}
+    mode="{{ site.theme_mode }}"
+  {% endif %}
+{% endcapture %}
+
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" {{ prefer_mode }}>
   {% include head.html %}
-  <body>
-    <a href="{% if page.lang == site.default_lang %}/{% else %}/{{page.lang}}/{% endif %}">
-      <div class="ui logo container">
-        <img src="/assets/img/logo.png" alt="My blog's logo" class="ui tiny centered image">
+
+  <body data-spy="scroll" data-target="#toc">
+    {% include sidebar.html %}
+    {% include topbar.html %}
+
+    <div id="main-wrapper">
+      <div id="main">
+        {% include refactor-content.html content=content %}
+        {% include footer.html %}
       </div>
+
+      {% include search-results.html %}
+
+    </div> <!-- #main-wrapper -->
+
+    {% if page.mermaid %}
+      {% include mermaid.html %}
+    {% endif %}
+
+    <div id="mask"></div>
+
+    <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button">
+      <i class="fas fa-angle-up"></i>
     </a>
-    {% include menu.html %}
-    <main aria-label="Content">
-      {{ content }}
-    </main>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-90738331-1', 'auto');
-      ga('send', 'pageview');
+    {% include search-loader.html %}
 
-    </script>
-    {% include footer.html %}
+    {% for js in page.custom_js %}
+      <script type="text/javascript" src="{{js}}"></script>
+    {% endfor %}
+
   </body>
+
 </html>

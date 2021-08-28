@@ -1,0 +1,36 @@
+---
+layout: page
+# The Category layout
+---
+
+{% if site.languages contains page.title %}
+  {% assign LANG = page.title %}
+{% else %}
+  {% assign LANG = "en" %}
+{% endif %}
+{% assign t = site.i18n[LANG] %}
+
+<div id="page-category">
+  <h1 class="pl-lg-2">
+    <i class="far fa-folder-open fa-fw text-muted"></i>
+    {% if site.languages contains page.title %}
+      {{ t.categories[page.title] }}
+    {% else %}
+      {{ page.title }}
+    {% endif %}
+    <span class="lead text-muted pl-2">{{ page.posts | size }}</span>
+  </h1>
+
+  <ul class="post-content pl-0">
+    {% for post in page.posts %}
+    <li class="d-flex justify-content-between pl-md-3 pr-md-3">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="dash flex-grow-1"></span>
+      {% assign dt = post.date | date: "%b" %}
+      {% assign rest_dt = post.date | date: " %-d, %Y" %}
+      {% assign final_dt = t.dates[dt] | append: rest_dt %}
+      <span class="text-muted small">{{ final_dt }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
