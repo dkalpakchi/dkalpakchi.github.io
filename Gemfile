@@ -9,7 +9,10 @@ gem "jemoji"
 
 gem "stringex"
 
-gem "nokogiri", ">= 1.8.5"
+gem "nokogiri", ">= 1.11.4"
+
+gem "addressable", ">= 2.8.0"
+
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do

@@ -37,7 +37,8 @@ avatar: /assets/img/logo.png
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: jekyll-theme-chirpy
+# theme: jekyll-theme-chirpy
+remote_theme: cotes2020/jekyll-theme-chirpy 
 gems:
   - jekyll-feed
   - jemoji
