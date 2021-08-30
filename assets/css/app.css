@@ -9,3 +9,7 @@
     -webkit-transform: none !important;
     -ms-transform: none !important;
 }
+
+#sidebar ul {
+    height: 3rem !important;
+}
