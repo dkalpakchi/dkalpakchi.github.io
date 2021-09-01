@@ -36,6 +36,8 @@ avatar: /assets/img/logo.png
 
 # Build settings
 markdown: kramdown
+kramdown:
+  math_engine: mathjax
 highlighter: rouge
 theme: jekyll-theme-chirpy
 gems:
