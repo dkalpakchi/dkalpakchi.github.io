@@ -18,4 +18,4 @@ categories: en technical
 ---
 ```
 
-Then I know for sure the language of every page from the `lang` parameter and I can get the posts for each language just by pointing to the respective category page. All I had to do was rewrite a number of includes and layouts of the original Chirpy theme to account for this new `lang` parameter, which was easy enough, so just have a look at [the github repository for this website](https://github.com/dkalpakchi/dkalpakchi.github.io), if you're curious! And voilà, here comes the revamped website!
+Then I know for sure the language of every page from the `lang` parameter and I can get the posts for each language just by pointing to the respective category page. The translations of categories, tags and some UI elements to different languages are kept in the `_config.yml` under `i18n` field. All I had to do was rewrite a number of includes and layouts of the original Chirpy theme to account for this new `lang` parameter, which was easy enough, so just have a look at [the github repository for this website](https://github.com/dkalpakchi/dkalpakchi.github.io), if you're curious! And voilà, here comes the revamped website!

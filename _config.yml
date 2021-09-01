@@ -121,6 +121,7 @@ i18n:
       thoughts: thoughts
       en: In English
       education: education
+      technical: technical
     tags:
       welcome: welcome
       hello: hello
@@ -167,6 +168,7 @@ i18n:
       thoughts: роздуми
       uk: Українською
       education: освіта
+      technical: технічне
     tags:
       welcome: вітання
       hello: привіт
