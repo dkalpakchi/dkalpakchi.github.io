@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.7.2"
+ruby RUBY_VERSION
 
 gem "jekyll"
 
