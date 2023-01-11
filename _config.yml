@@ -24,6 +24,9 @@ url: "https://dkalpakchi.github.io" # the base hostname & protocol for your site
 github:
   username: dkalpakchi
 
+twitter:
+  username: DKalpakchi
+
 social:
   name: Dmytro Kalpakchi
   email: dmytroka@kth.se
@@ -40,9 +43,10 @@ kramdown:
   math_engine: mathjax
 highlighter: rouge
 theme: jekyll-theme-chirpy
+plugins:
+  - jemoji
 gems:
   - jekyll-feed
-  - jemoji
   - jekyll-redirect-from
 exclude:
   - Gemfile
@@ -129,6 +133,9 @@ i18n:
       ukraine: Ukraine
       sweden: Sweden
       higher-education: higher education
+      nlp: NLP
+      natural-language-processing: natural language processing
+      thoughts: thoughts
     dates:
       Jan: Jan
       Feb: Feb
@@ -176,6 +183,9 @@ i18n:
       higher-education: вища освіта
       ukraine: Україна
       sweden: Швеція
+      nlp: NLP
+      natural-language-processing: Обробка природньої мови
+      thoughts: роздуми
     dates:
       Jan: Січ
       Feb: Лют
