@@ -40,8 +40,9 @@ avatar: /assets/img/logo.png
 # Build settings
 markdown: kramdown
 kramdown:
+  input: GFM
   math_engine: mathjax
-highlighter: rouge
+  highlighter: rouge
 theme: jekyll-theme-chirpy
 plugins:
   - jemoji
