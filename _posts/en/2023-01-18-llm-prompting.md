@@ -17,24 +17,7 @@ These days large language models seems to be one and only solution that most pra
 
 The trend is absolutely understandable, because performance improvements that these Transformer-based models bring to the table are indeed substantial. In early days when people used bag-of-words approaches to NLP, the title of this post could be considered offensive just because the word *penetration* is there, for instance. This is most definitely not what happens with Transformer models! Here are the results from the first package I could find on GitHub, [Detoxify](https://github.com/unitaryai/detoxify), which seems to be based on BERT-family of models.
 
-
-```python
-from detoxify import Detoxify  
-
-m = Detoxify('original')  
-print(m.predict("Prompting as a black box penetration testing for large language models"))  
-
-// The result you get after running this  
-// {  
-//   'toxicity': 0.000744035,  
-//   'severe_toxicity': 0.000110895904,  
-//   'obscene': 0.00017468685,  
-//   'threat': 0.00011949223,   
-//   'insult': 0.00017411365,   
-//   'identity_attack': 0.00014108917   
-// }   
-```
-
+<script src="https://gist.github.com/dkalpakchi/40233a7193f2b7dac6a6e8d20fb1c95e.js"></script>
 
 However, this is not the way you would interact with GPT-family of models, like GPT-3 or ChatGPT (if you're interested about my thoughts on these, you can read [this other blog post]({% post_url en/2023-01-11-chatgpt-thoughts %})). The way to interact with these is via *prompts*, which for GPT-family models are simply instructions to the model in natural language (because [they were trained so](https://openai.com/blog/instruction-following/)). For instance, the same task with GPT-3 could be attempted by giving it this kind of prompt (and a couple of new lines afterwards):
 > Evaluate the toxicity of the given piece of text and specify whether it is toxic, severely toxic, obscene, expressing threat, insulting, making an identity attack.
