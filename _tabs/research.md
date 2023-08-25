@@ -30,8 +30,7 @@ order: 1
 
 | Year | Publication Info |
 |-------|--------|
-| 2023<br><a href="/assets/bib/swectrl.bib">[cite]</a> | <a href="https://arxiv.org/abs/2304.13994">SweCTRL-Mini: a data-transparent Transformer-based large language model for controllable text generation in Swedish</a><br>_Supplementary_: <a href="https://github.com/dkalpakchi/SweCTRL-Mini">source code</a><br>**Currently under review**|
-| 2019<br><a href="/assets/bib/re2019.bib">[cite]</a> | <a href="https://arxiv.org/abs/1912.00183">[Re] Learning to Learn By Self-Critique</a><br>An attempt for ML Reproducibility Challenge together with Isac Arnekvist |
+| 2023<br><a href="/assets/bib/swectrl.bib">[cite]</a> | <a href="https://arxiv.org/abs/2304.13994">SweCTRL-Mini: a data-transparent Transformer-based large language model for controllable text generation in Swedish</a><br>_Supplementary_: <a href="https://zenodo.org/record/7868205">technical note</a>, <a href="https://github.com/dkalpakchi/SweCTRL-Mini">source code</a>, <a href="https://swectrl.dev/">website</a>, <a href="https://huggingface.co/dkalpakchi/SweCTRL-Mini">model on Huggingface Hub</a><br>|
 
 ## As the contributing author
 
@@ -47,3 +46,4 @@ order: 1
 | Year | Publication Info |
 |-------|--------|
 | 2023<br><a href="/assets/bib/embrace2023.bib">[cite]</a> | <a href="https://arxiv.org/abs/2305.08433">EMBRACE: Evaluation and Modifications for Boosting RACE</a><br>_Supplementary_: <a href="https://github.com/dkalpakchi/EMBRACE">source code</a><br>_In collaboration with_: Mariia Zyrianova, and Johan Boye<br>**Currently under review**|
+| 2019<br><a href="/assets/bib/re2019.bib">[cite]</a> | <a href="https://arxiv.org/abs/1912.00183">[Re] Learning to Learn By Self-Critique</a><br>An attempt for ML Reproducibility Challenge<br>_Supplementary_: <a href="https://github.com/dkalpakchi/ReproducingSCAPytorch">source code</a><br>_In collaboration with_: Isac Arnekvist |
