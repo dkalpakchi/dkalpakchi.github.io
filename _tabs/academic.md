@@ -7,6 +7,7 @@ order: 3
 ---
 
 Served as a main reviewer:
+* [LREC-COLING 2024](https://lrec-coling-2024.org/) -- 4 papers
 * [MS-AMLV 2023](https://apps.ucu.edu.ua/en/ms-amlv-2023/) -- 1 paper
 * [LREC 2022](https://lrec2022.lrec-conf.org/en/) -- 4 papers
 * [MS-AMLV 2021](https://apps.ucu.edu.ua/en/ms-amlv-2021/) -- 2 papers
