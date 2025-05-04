@@ -1,0 +1,15 @@
+#sidebar #avatar > a {
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+#sidebar #avatar img:hover {
+    transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    -ms-transform: none !important;
+}
+
+#sidebar ul {
+    height: 3rem !important;
+}
