@@ -19,7 +19,7 @@ layout: default
           <span class="semi-bold">
             {{ page.author | default: site.social.name }}
           </span>
-          
+
           {% include timeago.html date=page.date prep=t.util.on tooltip=true t=t%}
         </div>
 
@@ -34,11 +34,6 @@ layout: default
 
           <!-- read time -->
           {% include read-time.html content=content %}
-
-          <!-- page views -->
-          {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
-          <span id="pv" class="pageviews"><i class="fas fa-spinner fa-spin fa-fw"></i></span>
-          {% endif %}
 
         </div>
 
