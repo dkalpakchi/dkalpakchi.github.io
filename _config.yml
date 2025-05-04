@@ -52,13 +52,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-google_analytics:
-  id: 'G-1BRVK3TPS7'              # fill in your Google Analytics ID
-  # Google Analytics pageviews report settings
-  pv:
-    proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
-    cache_path:       # the local PV cache data, friendly to visitors from GFW region
-
 collections:
   tabs:
     output: true
@@ -74,34 +67,31 @@ jekyll-archives:
     category: /categories/:name/
 
 defaults:
-  -
-    scope:
-      path: ''          # An empty string here means all files in the project
+  - scope:
+      path: "" # An empty string here means all files in the project
       type: posts
     values:
       layout: post
-      comments: true    # Enable comments in posts.
-      toc: true         # Display TOC column in posts.
+      comments: true # Enable comments in posts.
+      toc: true # Display TOC column in posts.
       # DO NOT modify the following parameter unless you are confident enough
       # to update the code of all other post links in this project.
       permalink: /posts/:title/
-  -
-    scope:
+  - scope:
       path: _drafts
     values:
       comments: false
-  -
-    scope:
-      path: ''
-      type: tabs             # see `site.collections`
+  - scope:
+      path: ""
+      type: tabs # see `site.collections`
     values:
       layout: page
       permalink: /:title/
-      dynamic_title: true    # Hide title in mobile screens.
+      dynamic_title: true # Hide title in mobile screens.
 
 # direct translation
-default_lang: 'en'
-languages: ['en', 'uk']
+default_lang: "en"
+languages: ["en", "uk"]
 i18n:
   en:
     panel:
